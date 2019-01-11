@@ -20,6 +20,7 @@
     <title>Red Ball Survey</title>
     <link href="rb_reset.css" rel="stylesheet" />
     <link href="rb_styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="rb_forms.css" />
     <script src="rb_formsubmit.js"></script>
 
 </head>
@@ -53,6 +54,7 @@
             Pizza will not share your contact information with third
             parties, <em>ever</em>. </p>
         <p>Required values are marked by an asterisk (*)</p>
+
         <form id="survey" action="http://www.example.com/redball/survey" method="post">
             <fieldset id="custInfo">
                 <legend>Customer Information</legend>
@@ -84,6 +86,18 @@
                     <label for="mail">E-mail*</label>
                     <input name="custEmail" id="mail" type="email">
                 </div>
+
+                <div class="formRow">
+                    <label for="info">Where did you hear about us? <br />(select all that apply)</label>
+                    <select name="infoSrc" id="info" size="5" multiple>
+                        <option value="internet">Internet</option>
+                        <option value="mag">Magazine</option>
+                        <option value="news">Newspaper</option>
+                        <option value="word">Word of Mouth</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
                 <div class="formRow">
                     <label for="dish">Whats your favorite dish?</label>
                     <input name="favDish" id="dish" type="text" list="dishType">
@@ -98,11 +112,13 @@
                 </div>
                 <div class="formRow">
                     <label for="dineSpin">How many times do you dine out per month?</label>
-                    <input name="dineOut" id="dintSpin" type="number" value="1" step="1" min="0" max="20" />
+                    <input name="dineOut" id="dineSpin" type="number" value="1" step="1" min="0" max="20" />
                 </div>
                 <input name="mailMe" id="mailCB" value="yes" type="checkbox">
                 <label for="mailCB">Add me to your mailing listor great coupons and specials!</label>
             </fieldset>
+
+            <!-- Survey 2 -->
             <fieldset id="expInfo">
                 <legend>Share Your Experience at Red Ball Pizza</legend>
                 <div class="formRow">
@@ -152,7 +168,7 @@
                     10
                 </div>
                 <label for="commBox">Tell us more about your experience!</label>
-                <textarea name="custExp" id="commBox"></textarea>
+                <textarea name="custExp" id="commBox" cols="30" rows="10"></textarea>
             </fieldset>
         </form>
 
